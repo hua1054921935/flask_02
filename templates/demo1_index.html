@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{#config可直接获取配置信息#}
+{{ config.DEBUG }}
+{{ config.root_path }}
+<hr>
+{{ request.url }}
+<hr>
+{#urlfor可以根据函数名，传参来获取对应路径#}
+{{ url_for('demo',id=5) }}
+<hr>
+{#session 需要先设置再读取#}
+{{ session.get('name') }}
+<hr>
+{#g #}
+{{ g.name }}
+<hr>
+{% for messagge in get_flashed_messages() %}
+{{ messagge }}
+{% endfor %}
+</body>
+</html>
